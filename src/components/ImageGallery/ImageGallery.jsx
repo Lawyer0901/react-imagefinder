@@ -1,8 +1,9 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+import { List } from 'components/LargeImage/LargeImage.styled';
 
 const ImageGallery = ({ images, showLargeImage }) => {
   return (
-    <ul>
+    <List>
       {images.length > 0 ? (
         images.map(image => {
           return (
@@ -18,7 +19,7 @@ const ImageGallery = ({ images, showLargeImage }) => {
       ) : (
         <p>There are no images, try to search something :)!</p>
       )}
-    </ul>
+    </List>
   );
 };
 

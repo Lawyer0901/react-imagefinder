@@ -3,6 +3,8 @@ import Searchbar from './Searchbar/Searchbar';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 import LargeImage from './LargeImage/LargeImage';
+import Container from './Container/Container';
+import Spinner from './FidgetSpinner/FidgetSpinner';
 
 import ImageGallery from './ImageGallery/ImageGallery';
 import { searchImage } from './api/api';
@@ -64,10 +66,10 @@ class App extends Component {
     console.log(largeImage);
 
     return (
-      <>
+      <Container>
         <Searchbar onSubmit={this.handleSubmit} />
         <ImageGallery images={images} showLargeImage={showLargeImage} />;
-        {isLoading && <p>...images is Loading</p>}
+        {isLoading && <Spinner />}
         {error && <p>{error}</p>}
         {images.length > 0 && <Button onClick={loadMore} />}
         {showModal && (
@@ -75,7 +77,7 @@ class App extends Component {
             <LargeImage largeImageURL={largeImage} />
           </Modal>
         )}
-      </>
+      </Container>
     );
   }
 }

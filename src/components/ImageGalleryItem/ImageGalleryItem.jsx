@@ -1,14 +1,16 @@
+import { Items, GaleryImage } from 'components/LargeImage/LargeImage.styled';
+
 const ImageGalleryItem = ({ id, webformatURL, tags, onClick }) => {
   return (
-    <li className="gallery-item">
-      <img
+    <Items className="gallery-item">
+      <GaleryImage
         id={id}
         onClick={onClick}
         src={webformatURL}
         alt={tags}
         width="200px"
       />
-    </li>
+    </Items>
   );
 };
 
