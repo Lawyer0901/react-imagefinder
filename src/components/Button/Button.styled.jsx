@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const LoadMore = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   color: #fff;
   padding: 15px 25px;
   background-color: #38d2d2;
@@ -26,9 +30,10 @@ export const LoadMore = styled.button`
 
   border: 0;
 
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  /* user-select: none; */
+  /* -webkit-user-select: none; */
+  /* touch-action: manipulation; */
 
   cursor: pointer;
+  margin: auto;
 `;
