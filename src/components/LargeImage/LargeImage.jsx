@@ -1,5 +1,7 @@
-const LargeImage = ({ largeImageURL, tags }) => {
-  return <img src={largeImageURL} alt={tags} />;
+import { Image } from './LargeImage.styled';
+
+const LargeImage = ({ largeImageURL }) => {
+  return <Image src={largeImageURL} alt="" width="800px" />;
 };
 
 export default LargeImage;

@@ -23,7 +23,21 @@ class App extends Component {
       this.fetchImages();
     }
   }
-  showLargeImage = largeImageURL => {};
+  showLargeImage = largeImageURL => {
+    console.log(largeImageURL);
+    this.setState({
+      largeImage: largeImageURL,
+      showModal: true,
+    });
+    // this.setState(state => ({ showModal: !state.showModal }));
+  };
+
+  closeModal = e => {
+    this.setState({
+      showModal: false,
+      largeImage: null,
+    });
+  };
   async fetchImages() {
     try {
       const { search, page } = this.state;
@@ -45,19 +59,22 @@ class App extends Component {
       page: page + 1,
     }));
   render() {
-    const { isLoading, error, images } = this.state;
-    const { loadMore } = this;
+    const { isLoading, error, images, showModal, largeImage } = this.state;
+    const { loadMore, showLargeImage, closeModal } = this;
+    console.log(largeImage);
 
     return (
       <>
         <Searchbar onSubmit={this.handleSubmit} />
-        <ImageGallery images={images} />;
+        <ImageGallery images={images} showLargeImage={showLargeImage} />;
         {isLoading && <p>...images is Loading</p>}
         {error && <p>{error}</p>}
         {images.length > 0 && <Button onClick={loadMore} />}
-        <Modal>
-          <LargeImage />
-        </Modal>
+        {showModal && (
+          <Modal closeModal={closeModal}>
+            <LargeImage largeImageURL={largeImage} />
+          </Modal>
+        )}
       </>
     );
   }

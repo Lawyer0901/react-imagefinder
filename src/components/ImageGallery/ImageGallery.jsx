@@ -1,15 +1,17 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ images, showLargeImage }) => {
   return (
-    <ul className="gallery">
+    <ul>
       {images.length > 0 ? (
         images.map(image => {
           return (
             <ImageGalleryItem
               key={image.id}
+              id={image.id}
               webformatURL={image.webformatURL}
               tags={image.tags}
+              onClick={() => showLargeImage(image.largeImageURL)}
             />
           );
         })
