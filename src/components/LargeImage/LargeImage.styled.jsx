@@ -23,3 +23,14 @@ export const Items = styled.li`
 
   /* border-bottom: 2px #404b51 dotted; */
 `;
+
+export const Text = styled.p`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-items: center; */
+  font-size: 25px;
+  color: darkblue;
+  font-weight: 500;
+`;

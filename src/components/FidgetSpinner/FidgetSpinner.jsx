@@ -6,7 +6,10 @@ const Spinner = () => {
       height="80"
       width="80"
       ariaLabel="dna-loading"
-      wrapperStyle={{}}
+      wrapperStyle={{
+        marginLeft: 500,
+        marginRigth: 500,
+      }}
       wrapperClass="dna-wrapper"
       ballColors={['#ff0000', '#00ff00', '#0000ff']}
       backgroundColor="#F4442E"

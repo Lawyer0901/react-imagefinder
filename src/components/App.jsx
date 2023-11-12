@@ -26,11 +26,15 @@ class App extends Component {
     }
   }
   showLargeImage = largeImageURL => {
-    console.log(largeImageURL);
+    // console.log(largeImageURL);
+    // if (!largeImageURL) {
+    //   this.setState({ isloading: true });
+    // }
     this.setState({
       largeImage: largeImageURL,
       showModal: true,
     });
+    // this.setState({ isloading: false });
     // this.setState(state => ({ showModal: !state.showModal }));
   };
 

@@ -36,4 +36,5 @@ export const LoadMore = styled.button`
 
   cursor: pointer;
   margin: auto;
+  align-items: ;
 `;
